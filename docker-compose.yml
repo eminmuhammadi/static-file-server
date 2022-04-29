@@ -33,6 +33,6 @@ services:
     links:
       - static_file_server
 
-  volumes:
-    data:
-      driver: local
+volumes:
+  data:
+    driver: local
