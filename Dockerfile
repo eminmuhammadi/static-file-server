@@ -34,4 +34,5 @@ FROM scratch
 COPY --from=builder /app/bin/main .
 
 # Run executable
-CMD ["./main --port $FILE_SERVER_PORT --path $FILE_SERVER_PATH"]
+EXPOSE 5000
+CMD ["./main --port 5000 --path /app/data"]
