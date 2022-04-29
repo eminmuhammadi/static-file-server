@@ -4,11 +4,10 @@ services:
   static_file_server:
     container_name: static_file_server
     build: .
-    volumes:
-      - ./:/app
     environment:
-      - FILE_SERVER_PORT=5000
-      - FILE_SERVER_PATH=./data
+      - HOSTNAME=static_file_server
+    volumes:
+      - "data:/data/"
 
   minio:
     image: docker.io/bitnami/minio:2022
@@ -18,10 +17,10 @@ services:
     environment:
       - MINIO_ROOT_USER=username
       - MINIO_ROOT_PASSWORD=password
-      - MINIO_SERVER_ACCESS_KEY="access-key"
-      - MINIO_SERVER_SECRET_KEY="secret-key"
+      - MINIO_SERVER_ACCESS_KEY=access-key
+      - MINIO_SERVER_SECRET_KEY=secret-key
     volumes:
-      - "./data:/data"
+      - "data:/data/"
 
   nginx:
     image: nginx:alpine

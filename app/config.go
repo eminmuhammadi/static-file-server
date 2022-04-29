@@ -7,7 +7,7 @@ import (
 )
 
 var APP_CONFIG = fiber.Config{
-	Prefork:                   true,
+
 	StrictRouting:             true,
 	CaseSensitive:             true,
 	GETOnly:                   true,

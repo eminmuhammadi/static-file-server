@@ -10,7 +10,7 @@ import (
 
 var (
 	path = flag.String("path", ".", "Path to directory to serve")
-	port = flag.String("port", "8080", "Port to serve on")
+	port = flag.String("port", "5000", "Port to serve on")
 )
 
 func main() {
